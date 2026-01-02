@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float u, a, t, v, s;
+
+    printf("Enter Initial Velocity (u): ");
+    scanf("%f", &u);
+
+    printf("Enter Acceleration (a): ");
+    scanf("%f", &a);
+
+    printf("Enter Time (t): ");
+    scanf("%f", &t);
+
+    v = u + (a * t);
+    s = (u * t) + (0.5 * a * t * t);
+
+    printf("Final Velocity (v): %.2f\n", v);
+    printf("Distance Travelled (s): %.2f\n", s);
+
+    return 0;
+}
