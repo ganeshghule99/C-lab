@@ -1,0 +1,17 @@
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float a, b, perimeter, area;
+
+    printf("Enter outer radius (a) and inner radius (b): ");
+    scanf("%f %f", &a, &b);
+
+    perimeter = 2 * PI * (a + b);
+    area = PI * ((a * a) - (b * b));
+
+    printf("Perimeter of ring: %.2f\n", perimeter);
+    printf("Area of ring: %.2f\n", area);
+
+    return 0;
+}
