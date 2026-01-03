@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    float r, area, circ, vol;
+    int choice;
+
+    printf("Enter radius: ");
+    scanf("%f", &r);
+
+    printf("\n1. Area of Circle");
+    printf("\n2. Circumference of Circle");
+    printf("\n3. Volume of Sphere");
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            area = 3.14 * r * r;
+            printf("Area of Circle is: %.2f", area);
+            break;
+
+        case 2:
+            circ = 2 * 3.14 * r;
+            printf("Circumference of Circle is: %.2f", circ);
+            break;
+
+        case 3:
+            vol = (4.0/3.0) * 3.14 * r * r * r;
+            printf("Volume of Sphere is: %.2f", vol);
+            break;
+
+        default:
+            printf("Invalid choice");
+    }
+}
