@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    int x, y, choice, num, temp;
+
+    printf("Enter value for x: ");
+    scanf("%d", &x);
+    printf("Enter value for y: ");
+    scanf("%d", &y);
+
+    printf("\n--- MENU ---\n");
+    printf("1. Check Equality\n");
+    printf("2. Check Less Than\n");
+    printf("3. Quotient and Remainder\n");
+    printf("4. Range Check\n");
+    printf("5. Swap Values\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            if(x == y)
+                printf("x and y are equal");
+            else
+                printf("x and y are not equal");
+            break;
+
+        case 2:
+            if(x < y)
+                printf("x is less than y");
+            else
+                printf("x is not less than y");
+            break;
+
+        case 3:
+            if(y != 0)
+                printf("Quotient: %d, Remainder: %d", x/y, x%y);
+            else
+                printf("Cannot divide by zero");
+            break;
+
+        case 4:
+            printf("Enter a number to check: ");
+            scanf("%d", &num);
+            if(num >= x && num <= y)
+                printf("%d lies between %d and %d", num, x, y);
+            else
+                printf("%d does not lie between %d and %d", num, x, y);
+            break;
+
+        case 5:
+            temp = x;
+            x = y;
+            y = temp;
+            printf("Swapped values: x = %d, y = %d", x, y);
+            break;
+
+        default:
+            printf("Invalid choice");
+    }
+}
