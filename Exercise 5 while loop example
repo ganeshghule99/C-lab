@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    
+    // Loop continues as long as n is not a single digit (greater than 9)
+    while (n > 9)
+    {
+        // Remove the last digit
+        n = n / 10;
+    }
+    
+    printf("The first digit is: %d", n);
+}
