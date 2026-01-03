@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    float cp, sp, amount;
+    printf("Enter Cost Price and Selling Price: ");
+    scanf("%f%f", &cp, &sp);
+
+    if(sp > cp)
+    {
+        amount = sp - cp;
+        printf("Seller made a Profit of: %.2f", amount);
+    }
+    else if(cp > sp)
+    {
+        amount = cp - sp;
+        printf("Seller incurred a Loss of: %.2f", amount);
+    }
+    else
+    {
+        printf("No Profit No Loss");
+    }
+}
