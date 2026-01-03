@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    char color;
+    printf("Enter a character (V, I, B, G, Y, O, R): ");
+    scanf("%c", &color);
+
+    switch(color)
+    {
+        case 'v':
+        case 'V':
+            printf("Violet");
+            break;
+
+        case 'i':
+        case 'I':
+            printf("Indigo");
+            break;
+
+        case 'b':
+        case 'B':
+            printf("Blue");
+            break;
+
+        case 'g':
+        case 'G':
+            printf("Green");
+            break;
+
+        case 'y':
+        case 'Y':
+            printf("Yellow");
+            break;
+
+        case 'o':
+        case 'O':
+            printf("Orange");
+            break;
+
+        case 'r':
+        case 'R':
+            printf("Red");
+            break;
+
+        default:
+            printf("Invalid rainbow color");
+    }
+}
+
