@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    char color;
+    printf("Enter a color code (r, g, b): ");
+    scanf("%c", &color);
+
+    switch(color)
+    {
+        case 'r':
+        case 'R':
+            printf("RED");
+            break;
+            
+        case 'g':
+        case 'G':
+            printf("GREEN");
+            break;
+            
+        case 'b':
+        case 'B':
+            printf("BLUE");
+            break;
+            
+        default:
+            printf("INVALID COLOR");
+    }
+}
