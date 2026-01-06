@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int c;
+    int lineCount = 0;
+    int currentLength = 0;
+    int maxLength = 0;
+
+    printf("Enter text (Press Ctrl+Z or Ctrl+D to end):\n");
+
+    while((c = getchar()) != EOF) {
+        if(c == '\n') {
+            lineCount++;
+            if(currentLength > maxLength) {
+                maxLength = currentLength;
+            }
+            currentLength = 0;
+        } else {
+            currentLength++;
+        }
+    }
+
+    if(currentLength > 0) {
+        lineCount++;
+        if(currentLength > maxLength) {
+            maxLength = currentLength;
+        }
+    }
+
+    printf("\nNumber of lines: %d\n", lineCount);
+    printf("Length of longest line: %d\n", maxLength);
+
+    return 0;
+}
