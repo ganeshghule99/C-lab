@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum, temp;
+    printf("Enter input number: ");
+    scanf("%d", &n);
+    
+    // Process repeats as long as n has more than 1 digit
+    while(n > 9) {
+        sum = 0;
+        temp = n;
+        while(temp > 0) {
+            sum += temp % 10;
+            temp /= 10;
+        }
+        n = sum; // Update n to the new sum
+    }
+    
+    printf("Single digit result: %d\n", n);
+    return 0;
+}
+
