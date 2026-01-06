@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void main() {
+    int n, sum;
+
+    printf("Give any number: ");
+    scanf("%d", &n);
+
+    // Outer loop: repeats until n becomes a single digit
+    do {
+        sum = 0;
+        printf("%d -> ", n); // Optional: to show the process
+
+        // Inner loop: calculates sum of current digits
+        while (n > 0) {
+            sum += n % 10; // Add last digit to sum
+            n = n / 10;    // Remove last digit
+        }
+        
+        n = sum; // Update n with the new sum
+
+    } while (n > 9); // Continue if n is still 2 digits or more
+
+    printf("%d\n", n); // Print the final single digit
+}
