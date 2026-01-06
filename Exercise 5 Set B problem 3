@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    float x, sum = 0, p = 1;
+    int n, i;
+    
+    printf("Enter x: ");
+    scanf("%f", &x);
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++)
+    {
+        p = p * x;
+        sum = sum + (i / p);
+    }
+    
+    printf("Sum of series is: %.2f", sum);
+}
