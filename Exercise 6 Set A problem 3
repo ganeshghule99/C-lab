@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    char ch = 'A'; // Start with 'A'
+    
+    printf("Enter number of lines (n): "); // e.g., 4
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        for(j = 1; j <= i; j++) {
+            printf("%c ", ch);
+            ch++; // Move to next letter in alphabet
+        }
+        printf("\n");
+    }
+    return 0;
+}
