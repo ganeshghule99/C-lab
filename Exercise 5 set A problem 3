@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    int x, n, i;
+    long result = 1;
+    
+    printf("Enter base x and power n: ");
+    scanf("%d%d", &x, &n);
+
+    for(i = 1; i <= n; i++)
+    {
+        result = result * x;
+    }
+    
+    printf("Result is %ld", result);
+}
+
