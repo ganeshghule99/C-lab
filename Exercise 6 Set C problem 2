@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int s, w;
+    float temp, sum, average;
+    char *seasons[] = {"Spring", "Summer", "Monsoon", "Winter"};
+    int minRange[] = {15, 25, 20, 5};
+    int maxRange[] = {25, 40, 35, 20};
+
+    for(s = 0; s < 4; s++) {
+        sum = 0;
+        printf("Enter weekly temperatures for %s (Range %d to %d):\n", seasons[s], minRange[s], maxRange[s]);
+
+        for(w = 1; w <= 12; w++) {
+            do {
+                printf("Week %d: ", w);
+                scanf("%f", &temp);
+
+                if(temp < minRange[s] || temp > maxRange[s]) {
+                    printf("Invalid input! Temperature must be between %d and %d.\n", minRange[s], maxRange[s]);
+                }
+            } while(temp < minRange[s] || temp > maxRange[s]);
+            
+            sum += temp;
+        }
+
+        average = sum / 12.0;
+        printf("Average temperature for %s: %.2f\n\n", seasons[s], average);
+    }
+
+    return 0;
+}
