@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int start, end, i, j;
+    // According to the image example: start=2, end=9
+    printf("Enter start and end of tables: ");
+    scanf("%d %d", &start, &end);
+
+    // i controls the multiplier (1 to 10)
+    for(i = 1; i <= 10; i++) {
+        // j controls the table number (e.g., 2, 3, 4... 9)
+        for(j = start; j <= end; j++) {
+            printf("%d x %d = %d\t", j, i, j * i);
+        }
+        printf("\n"); // Move to next line after printing row
+    }
+    return 0;
+}
