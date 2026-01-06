@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float sales, sum, average;
+    int i, j;
+    char *zones[] = {"North", "South", "East", "West"};
+
+    for(i = 0; i < 4; i++) {
+        sum = 0;
+        printf("Enter sales for %s branch:\n", zones[i]);
+        
+        for(j = 1; j <= 4; j++) {
+            printf("Quarter %d: ", j);
+            scanf("%f", &sales);
+            sum += sales;
+        }
+        
+        average = sum / 4.0;
+        printf("Average sales for %s branch: %.2f\n\n", zones[i], average);
+    }
+
+    return 0;
+}
