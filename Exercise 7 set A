@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int choice;
+    double num;
+
+    while(1) {
+        // Displaying the menu
+        printf("\n\n--- Math Operations Menu ---\n");
+        printf("1. Sine\n");
+        printf("2. Cosine\n");
+        printf("3. Log (Natural)\n");
+        printf("4. e^x (Exponential)\n");
+        printf("5. Square Root\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        // Handling the Exit condition immediately
+        if (choice == 6) {
+            printf("Exiting program.\n");
+            exit(0);
+        }
+
+        // Taking input for the calculation
+        printf("Enter the number: ");
+        scanf("%lf", &num);
+
+        // Performing the operation based on choice
+        switch(choice) {
+            case 1:
+                // Note: sin() takes input in radians
+                printf("Sine of %.2f is %.4f\n", num, sin(num));
+                break;
+            case 2:
+                // Note: cos() takes input in radians
+                printf("Cosine of %.2f is %.4f\n", num, cos(num));
+                break;
+            case 3:
+                // log() computes natural logarithm
+                if(num > 0)
+                    printf("Log of %.2f is %.4f\n", num, log(num));
+                else
+                    printf("Error: Log is strictly for positive numbers.\n");
+                break;
+            case 4:
+                printf("e^%.2f is %.4f\n", num, exp(num));
+                break;
+            case 5:
+                if(num >= 0)
+                    printf("Square Root of %.2f is %.4f\n", num, sqrt(num));
+                else
+                    printf("Error: Cannot find square root of a negative number.\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    }
+    return 0;
+}
+
