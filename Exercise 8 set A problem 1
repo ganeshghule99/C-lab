@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int choice;
+    double val;
+
+    while(1) {
+        printf("\n--- Math Menu ---\n1. Sine\n2. Cosine\n3. Log\n4. e^x\n5. Square Root\n6. Exit\nEnter choice: ");
+        scanf("%d", &choice);
+        if(choice == 6) exit(0);
+
+        printf("Enter value: ");
+        scanf("%lf", &val);
+
+        switch(choice) {
+            case 1: printf("Result: %f", sin(val)); break;
+            case 2: printf("Result: %f", cos(val)); break;
+            case 3: printf("Result: %f", log(val)); break;
+            case 4: printf("Result: %f", exp(val)); break;
+            case 5: printf("Result: %f", sqrt(val)); break;
+            default: printf("Invalid choice");
+        }
+    }
+    return 0;
+}
+
