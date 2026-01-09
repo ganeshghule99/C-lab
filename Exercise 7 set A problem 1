@@ -1,0 +1,35 @@
+here#include <stdio.h>
+#include <ctype.h> // Required for isalpha, isdigit, toupper, tolower
+
+int main() {
+    char ch;
+
+    // 1. Accept a character from the user
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    // 2. Check if it is an alphabet
+    if (isalpha(ch)) {
+        printf("'%c' is an alphabet.\n", ch);
+
+        // Check if uppercase or lowercase and change case
+        if (isupper(ch)) {
+            printf("It is Uppercase.\n");
+            printf("Converted to Lowercase: %c\n", tolower(ch));
+        } else {
+            printf("It is Lowercase.\n");
+            printf("Converted to Uppercase: %c\n", toupper(ch));
+        }
+    }
+    // 3. Check if it is a digit
+    else if (isdigit(ch)) {
+        printf("'%c' is a digit.\n", ch);
+    }
+    // 4. Otherwise, it is a punctuation or special symbol
+    else {
+        printf("'%c' is a punctuation symbol or special character.\n", ch);
+    }
+
+    return 0;
+}
+
