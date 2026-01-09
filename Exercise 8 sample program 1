@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+/* Function declarations */
+float areacircle(float r);
+float areacylinder(float r, int h);
+
+void main() {
+    float area, r;
+    int h;
+
+    printf("\nEnter Radius: ");
+    scanf("%f", &r);
+    
+    // Function call to calculate area of circle
+    area = areacircle(r);
+    printf("\nArea of circle = %6.2f", area);
+
+    printf("\nEnter Height: ");
+    scanf("%d", &h);
+    
+    // Function call to calculate area of cylinder
+    area = areacylinder(r, h);
+    printf("\nArea of cylinder = %6.2f", area);
+}
+
+/* Function to calculate area of circle */
+float areacircle(float r) {
+    const float pi = 3.142;
+    return(pi * r * r);
+}
+
+/* Function to calculate area of cylinder using the circle function */
+float areacylinder(float r, int h) {
+    // Modular approach: calling one user-defined function inside another
+    return 2 * areacircle(r) * h;
+}
+
