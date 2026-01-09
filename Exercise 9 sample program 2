@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+long int nCr(int n, int r);
+
+void main() {
+    int n, r;
+    printf("\nEnter the total number of objects (n): ");
+    scanf("%d", &n);
+    printf("\nEnter the number of objects to be selected (r): ");
+    scanf("%d", &r);
+    printf("\nThe value nCr(%d, %d) is %ld", n, r, nCr(n, r));
+}
+
+long int nCr(int n, int r) {
+    if (n == r || r == 0)
+        return 1;
+    else
+        return (nCr(n - 1, r) + nCr(n - 1, r - 1));
+}
+
