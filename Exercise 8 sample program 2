@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+/* Function declaration */
+int iswhitespace(char ch);
+
+void main() {
+    char ch;
+    int count = 0;
+
+    printf("\nEnter the characters. Type CTRL + Z to terminate: ");
+    
+    // Loop until End of File (EOF) is reached
+    while((ch = getchar()) != EOF) {
+        if(iswhitespace(ch)) {
+            count++;
+        }
+    }
+    printf("\nThe total number of white spaces = %d", count);
+}
+
+/* Function definition using switch-case */
+int iswhitespace(char ch) {
+    switch(ch) {
+        case ' ':
+        case '\t':
+        case '\n':
+            return 1;
+        default:
+            return 0;
+    }
+}
+
