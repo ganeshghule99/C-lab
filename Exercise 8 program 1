@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    float x1, y1, x2, y2, slope, distance;
+    int choice;
+
+    printf("Enter coordinates for Point 1 (x1 y1): ");
+    scanf("%f %f", &x1, &y1);
+    printf("Enter coordinates for Point 2 (x2 y2): ");
+    scanf("%f %f", &x2, &y2);
+
+    while(1) {
+        printf("\n--- Geometry Menu ---");
+        printf("\n1. Distance between points");
+        printf("\n2. Slope of line");
+        printf("\n3. Check if in same quadrant");
+        printf("\n4. EXIT");
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1:
+                // Formula: sqrt((x2-x1)^2 + (y2-y1)^2)
+                distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+                printf("Distance: %.2f\n", distance);
+                break;
+            case 2:
+                // Formula: m = (y2-y1)/(x2-x1)
+                if ((x2 - x1) != 0) {
+                    slope = (y2 - y1) / (x2 - x1);
+                    printf("Slope: %.2f\n", slope);
+                } else {
+                    printf("Slope is undefined (Vertical line)\n");
+                }
+                break;
+            case 3:
+                // Logic: Both x and both y must have same signs
+                if (((x1 > 0 && x2 > 0) || (x1 < 0 && x2 < 0)) && 
+                    ((y1 > 0 && y2 > 0) || (y1 < 0 && y2 < 0))) {
+                    printf("Points lie in the same quadrant.\n");
+                } else {
+                    printf("Points lie in different quadrants.\n");
+                }
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid choice!\n");
+        }
+    }
+    return 0;
+}
+
