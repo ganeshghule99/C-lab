@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int checkCharType(char ch) {
+    if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) return 1;
+    if(ch >= '0' && ch <= '9') return 2;
+    return 3;
+}
+
+int main() {
+    char ch;
+    int alphabets = 0, digits = 0, special = 0;
+    printf("Enter text (Press Ctrl+Z then Enter to stop):\n");
+    
+    while((ch = getchar()) != EOF) {
+        if(ch == '\n' || ch == ' ') continue; // Skip formatting characters
+        int result = checkCharType(ch);
+        if(result == 1) alphabets++;
+        else if(result == 2) digits++;
+        else if(result == 3) special++;
+    }
+    
+    printf("\nResults:\nAlphabets: %d\nDigits: %d\nSpecial Symbols: %d\n", alphabets, digits, special);
+    return 0;
+}
+
