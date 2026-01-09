@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int choice, qty;
+    float price, totalAmount = 0, currentItemTotal;
+
+    while(1) {
+        printf("\n--- Shop Menu ---");
+        printf("\n1. Item A (Rs. 100)");
+        printf("\n2. Item B (Rs. 200)");
+        printf("\n3. Item C (Rs. 300)");
+        printf("\n4. EXIT & Show Total");
+        printf("\nSelect item: ");
+        scanf("%d", &choice);
+
+        if(choice == 4) break;
+
+        printf("Enter quantity: ");
+        scanf("%d", &qty);
+
+        // Assigning price based on item choice
+        if (choice == 1) price = 100;
+        else if (choice == 2) price = 200;
+        else if (choice == 3) price = 300;
+        else {
+            printf("Invalid item!\n");
+            continue;
+        }
+
+        currentItemTotal = price * qty;
+
+        // Apply 10% discount if quantity > 10
+        if (qty > 10) {
+            printf("Discount of 10%% applied for bulk purchase!\n");
+            currentItemTotal = currentItemTotal * 0.90;
+        }
+
+        totalAmount += currentItemTotal;
+        printf("Current added amount: Rs. %.2f\n", currentItemTotal);
+    }
+
+    printf("\nTotal Amount to pay: Rs. %.2f\n", totalAmount);
+    return 0;
+}
+
