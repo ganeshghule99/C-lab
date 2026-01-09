@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    float budget, total_spent = 0.0, qty;
+    int choice;
+
+    // Fixed prices for items as per instructions
+    const float PRICE_APPLE = 150.0; // per kg
+    const float PRICE_CAKE = 500.0;  // per cake
+    const float PRICE_BREAD = 40.0;  // per loaf
+
+    printf("--- Picnic Budget Planner ---\n");
+    printf("Enter your total budget for the lunch: ");
+    scanf("%f", &budget);
+
+    while (1) {
+        printf("\nRemaining Budget: Rs. %.2f", (budget - total_spent));
+        printf("\nItems Available:");
+        printf("\n1. Apples (Rs. %.2f/kg)", PRICE_APPLE);
+        printf("\n2. Cake   (Rs. %.2f/pc)", PRICE_CAKE);
+        printf("\n3. Bread  (Rs. %.2f/loaf)", PRICE_BREAD);
+        printf("\n4. Exit Purchasing");
+        printf("\nSelect an item to buy: ");
+        scanf("%d", &choice);
+
+        if (choice == 4) {
+            break;
+        }
+
+        printf("How much/many would you like to purchase? ");
+        scanf("%f", &qty);
+
+        float current_purchase = 0;
+        switch (choice) {
+            case 1: current_purchase = qty * PRICE_APPLE; break;
+            case 2: current_purchase = qty * PRICE_CAKE; break;
+            case 3: current_purchase = qty * PRICE_BREAD; break;
+            default: printf("Invalid choice!\n"); continue;
+        }
+
+        total_spent += current_purchase;
+
+        // Check if budget is exceeded
+        if (total_spent > budget) {
+            printf("\nALERT: You have exceeded your budget!");
+            printf("\nTotal spent: Rs. %.2f | Budget: Rs. %.2f", total_spent, budget);
+            break; 
+        } else {
+            printf("Added to cart. Total spent so far: Rs. %.2f\n", total_spent);
+        }
+    }
+
+    printf("\n--- Final Summary ---");
+    printf("\nTotal Amount Spent: Rs. %.2f", total_spent);
+    printf("\nRemaining Balance: Rs. %.2f\n", (budget - total_spent));
+
+    return 0;
+}
+
